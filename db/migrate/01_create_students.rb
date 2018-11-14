@@ -1,15 +1,15 @@
 class CreateStudents < ActiveRecord::Migration[5.1]
 
-  connection = ActiveRecord::Base.establish_connection(
-  :adapter => "sqlite3",
-  :database => "db/artists.sqlite"
-)
-
-
-
+  sql = <<-SQL 
+    CREATE TABKE IF NOT EXISTS students (
+      id INTEGER PRIMARY KEY, 
+      name TEXT
+    )
+  SQL
+  
   def change
-
+    create_table
   end
-    
-    
+
+
 end
